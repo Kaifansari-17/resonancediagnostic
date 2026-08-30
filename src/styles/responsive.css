@@ -1,0 +1,703 @@
+/* ==========================================================================
+   Resonance Diagnostic — Responsive Rules
+
+   Breakpoints:
+   320 / 375 / 390 / 414 / 640 / 768 / 900 /
+   1024 / 1280 / 1440 / 1600 / 1920
+   ========================================================================== */
+
+
+/* ==========================================================================
+   LARGE DESKTOP
+   ========================================================================== */
+
+@media (max-width: 1280px) {
+
+  :root {
+    --rd-container: 1120px;
+  }
+
+}
+
+
+/* ==========================================================================
+   TABLET / SMALL DESKTOP
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+
+  :root {
+    --rd-section: clamp(3.75rem, 7vw, 5.5rem);
+  }
+
+  .rd-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rd-hero-inner {
+    gap: 2.5rem;
+  }
+
+}
+
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+  .rd-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rd-split.is-reverse > *:first-child {
+    order: 2;
+  }
+
+  /*
+   * Hero becomes one column.
+   * DNA remains an absolutely positioned background element.
+   */
+
+  .rd-hero-inner {
+    display: flex;
+    grid-template-columns: none;
+  }
+
+  .rd-journey-track {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rd-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rd-contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 640px) {
+
+  :root {
+    --rd-nav-h: 70px;
+    --rd-section: 3.4rem;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     General mobile grids
+     ------------------------------------------------------------------------ */
+
+  .rd-grid-3,
+  .rd-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rd-form-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     HERO
+     ------------------------------------------------------------------------ */
+
+  .rd-hero {
+    min-height: 820px;
+    height: auto;
+    max-height: none;
+
+    padding-top: calc(var(--rd-nav-h) + 1.8rem);
+    padding-bottom: 0;
+
+    overflow: hidden;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     DNA / MOLECULAR BACKGROUND
+
+     Keep DNA on the right side.
+     Make it subtle so it doesn't interfere with text.
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-scene {
+    position: absolute;
+
+    top: 5%;
+    right: -52%;
+
+    width: 110%;
+    height: 82%;
+
+    z-index: 0;
+
+    opacity: 0.24;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 20%,
+      rgba(0, 0, 0, 0.35) 42%,
+      black 68%,
+      black 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 20%,
+      rgba(0, 0, 0, 0.35) 42%,
+      black 68%,
+      black 100%
+    );
+  }
+
+  .rd-hero-scene > * {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     HERO SCRIM
+
+     Darker on the left where the content sits.
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-scrim {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background: linear-gradient(
+      90deg,
+      #03132e 0%,
+      rgba(3, 19, 46, 0.98) 35%,
+      rgba(3, 19, 46, 0.88) 58%,
+      rgba(3, 19, 46, 0.42) 100%
+    );
+  }
+
+
+  /* ------------------------------------------------------------------------
+     HERO INNER
+
+     Center the complete hero content.
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-inner {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    width: 100%;
+    height: auto;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    text-align: center;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     HERO COPY
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-copy {
+    position: relative;
+
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 520px;
+
+    padding:
+      0 18px 190px;
+
+    gap: 1.15rem;
+
+    text-align: center;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     EYEBROW
+     ------------------------------------------------------------------------ */
+
+  .rd-eyebrow {
+    width: 100%;
+    max-width: 350px;
+
+    font-size: 0.70rem;
+    line-height: 1.65;
+
+    letter-spacing: 0.16em;
+
+    text-align: center;
+  }
+
+  .rd-eyebrow::after {
+    display: none;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     HERO TITLE
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-title {
+    width: 100%;
+    max-width: 430px;
+
+    margin-top: 6px;
+
+    font-size: clamp(
+      2.5rem,
+      11vw,
+      3.6rem
+    );
+
+    line-height: 1.02;
+
+    text-align: center;
+  }
+
+  .rd-hero-title .rd-reveal-line {
+    display: block;
+
+    line-height: 1.02;
+  }
+
+  .rd-hero-title .rd-reveal-line > span {
+    display: block;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     KARGILL HEALTHCARE LLP
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-legal {
+    display: block;
+
+    width: 100%;
+    max-width: 360px;
+
+    margin-top: 8px;
+
+    font-size: 1.12rem;
+    line-height: 1.25;
+
+    text-align: center;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     GREEN UNDERLINE
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-underline {
+    width: 55px;
+
+    margin-top: 6px;
+
+    align-self: center;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     DESCRIPTION
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-copy .rd-copy {
+    width: 100%;
+    max-width: 360px;
+
+    margin-top: 8px;
+
+    font-size: 0.95rem;
+    line-height: 1.8;
+
+    text-align: center;
+
+    color: rgba(
+      220,
+      231,
+      238,
+      0.76
+    );
+  }
+
+
+  /* ------------------------------------------------------------------------
+     BUTTONS
+     ------------------------------------------------------------------------ */
+
+  .rd-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    gap: 10px;
+
+    margin-top: 8px;
+  }
+
+  .rd-actions .rd-btn {
+    width: 100%;
+
+    max-width: 320px;
+
+    min-width: 0;
+
+    flex: none;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     HERO TRUST POINTS
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 320px;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    text-align: left;
+  }
+
+  .rd-hero-features li {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 4px 0;
+
+    border-left: none !important;
+  }
+
+  .rd-hero-feature-icon {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     ECG / WAVEFORM
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-signal {
+    right: -8%;
+
+    bottom: 145px;
+
+    width: 230px;
+
+    opacity: 0.22;
+
+    z-index: 1;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     BOTTOM FEATURE CARD
+     ------------------------------------------------------------------------ */
+
+  .rd-hero-icons-card {
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+
+    bottom: 18px;
+
+    width: auto;
+    max-width: none;
+
+    min-height: 82px;
+
+    padding: 10px 8px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 0;
+
+    z-index: 5;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+  }
+
+  .rd-hero-icon-item {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+
+    gap: 5px;
+
+    padding: 5px;
+  }
+
+  .rd-hero-icon-item + .rd-hero-icon-item {
+    border-left:
+      1px solid
+      rgba(255, 255, 255, 0.12);
+  }
+
+  .rd-chip-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .rd-chip-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+
+    text-align: center;
+  }
+
+  .rd-chip-text b {
+    font-size: 0.68rem;
+
+    white-space: nowrap;
+  }
+
+  .rd-chip-text small {
+    display: none;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     GENERAL MOBILE COMPONENTS
+     ------------------------------------------------------------------------ */
+
+  .rd-btn {
+    width: 100%;
+  }
+
+  .rd-card {
+    padding: 1.3rem;
+  }
+
+  .rd-footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 2.2rem;
+  }
+
+  .rd-report-flow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rd-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+}
+
+
+/* ==========================================================================
+   SMALL PHONES — 375px / 390px
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+  .rd-hero {
+    min-height: 810px;
+  }
+
+  .rd-hero-copy {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 175px;
+  }
+
+  .rd-hero-title {
+    max-width: 390px;
+
+    font-size: clamp(
+      2.4rem,
+      11.5vw,
+      3.2rem
+    );
+  }
+
+  .rd-hero-legal {
+    font-size: 1.05rem;
+  }
+
+  .rd-hero-copy .rd-copy {
+    max-width: 310px;
+
+    font-size: 0.92rem;
+  }
+
+  .rd-actions .rd-btn {
+    max-width: 310px;
+  }
+
+  .rd-hero-scene {
+    right: -58%;
+
+    width: 115%;
+
+    opacity: 0.22;
+  }
+
+  .rd-hero-icons-card {
+    left: 12px;
+    right: 12px;
+
+    bottom: 12px;
+  }
+
+}
+
+
+/* ==========================================================================
+   VERY SMALL PHONES — 320px / 375px
+   ========================================================================== */
+
+@media (max-width: 380px) {
+
+  :root {
+    --rd-container: 100%;
+  }
+
+  .rd-hero {
+    min-height: 790px;
+  }
+
+  .rd-hero-copy {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 165px;
+  }
+
+  .rd-hero-title {
+    font-size: 2.25rem;
+  }
+
+  .rd-hero-legal {
+    font-size: 1rem;
+
+    max-width: 300px;
+  }
+
+  .rd-hero-copy .rd-copy {
+    max-width: 290px;
+
+    font-size: 0.88rem;
+  }
+
+  .rd-actions .rd-btn {
+    max-width: 290px;
+  }
+
+  .rd-hero-scene {
+    right: -62%;
+
+    width: 120%;
+
+    opacity: 0.20;
+  }
+
+  .rd-hero-icons-card {
+    left: 8px;
+    right: 8px;
+
+    bottom: 8px;
+  }
+
+  .rd-hero-chip {
+    font-size: 0.7rem;
+  }
+
+}
+
+
+/* ==========================================================================
+   LARGE DESKTOP
+   ========================================================================== */
+
+@media (min-width: 1600px) {
+
+  :root {
+    --rd-container: 1340px;
+  }
+
+}
+
+
+/* ==========================================================================
+   TOUCH DEVICES
+   ========================================================================== */
+
+@media (hover: none) {
+
+  .rd-cursor-glow {
+    display: none;
+  }
+
+  .rd-card:hover {
+    transform: none;
+  }
+
+  .rd-media:hover img {
+    transform: none;
+  }
+
+  .rd-btn,
+  .rd-nav-link,
+  .rd-link {
+    min-height: 44px;
+  }
+
+}
