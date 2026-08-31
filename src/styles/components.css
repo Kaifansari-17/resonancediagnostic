@@ -2086,6 +2086,10 @@
 .rd-footer-legal a:hover {
   color: var(--rd-navy-400);
 }
+.rd-footer-credit {
+  margin-top: 0.6rem;
+  text-align: center;
+}
 .rd-footer-credit a {
   color: inherit;
   text-decoration: underline;
