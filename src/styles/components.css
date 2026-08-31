@@ -2086,6 +2086,14 @@
 .rd-footer-legal a:hover {
   color: var(--rd-navy-400);
 }
+.rd-footer-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.rd-footer-credit a:hover {
+  color: var(--rd-navy-400);
+}
 
 /* ---------- Floating actions + to top ---------- */
 .rd-floating {

@@ -87,6 +87,12 @@ export function Footer() {
               Privacy Policy
             </Link>
           </span>
+          <span className="rd-footer-credit">
+            Maintained and Developed by{" "}
+            <a href="https://codesniffs.com" target="_blank" rel="noopener noreferrer">
+              codesniffs.com
+            </a>
+          </span>
         </div>
       </div>
     </footer>
