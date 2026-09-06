@@ -26,6 +26,9 @@ import { Waveform } from "@/components/Waveform";
 import { ButtonLink } from "@/components/Button";
 import {
   beyondDiagnostics,
+  commitmentStatement,
+  diagnosticExpertise,
+  diagnosticExpertiseIntro,
   differentiators,
   howItWorks,
   packages,
@@ -34,6 +37,7 @@ import {
   services,
   teamCategories,
   insightsPreview,
+  whyChooseUs,
 } from "@/data/site";
 
 const signatureIcons = [FlaskConical, FileText, ShieldCheck, Microscope, Lightbulb];
@@ -98,6 +102,31 @@ function Home() {
         </div>
       </section>
 
+      {/* Why choose us */}
+      <section className="rd-section is-ice">
+        <div className="rd-container">
+          <SectionHeading
+            center
+            eyebrow="Why Choose Us"
+            title="Why Choose Resonance Diagnostics"
+            copy="Accuracy, speed and transparency at every step, from sample collection to final report."
+          />
+          <div className="rd-grid">
+            {whyChooseUs.map((w, i) => (
+              <ServiceCard
+                key={w.title}
+                number={`0${i + 1}`}
+                title={w.title}
+                description={w.description}
+                icon={w.icon}
+                alt={i % 2 === 1}
+                delay={i * 70}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Signature section */}
       <section className="rd-section is-dark rd-texture-grid">
         <div className="rd-container">
@@ -128,6 +157,30 @@ function Home() {
             <ButtonLink to="/services">
               View all services <ArrowRight size={17} />
             </ButtonLink>
+          </div>
+        </div>
+      </section>
+
+      {/* Diagnostic expertise */}
+      <section className="rd-section">
+        <div className="rd-container">
+          <SectionHeading
+            eyebrow="Our Diagnostic Expertise"
+            title="A Comprehensive Spectrum of Pathology Services"
+            copy={diagnosticExpertiseIntro}
+          />
+          <div className="rd-grid">
+            {diagnosticExpertise.map((d, i) => (
+              <ServiceCard
+                key={d.title}
+                number={`0${i + 1}`}
+                title={d.title}
+                description={d.description}
+                icon={d.icon}
+                alt={i % 2 === 1}
+                delay={i * 70}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -318,6 +371,21 @@ function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Commitment */}
+      <section className="rd-section is-ice">
+        <div className="rd-container" style={{ maxWidth: 760, textAlign: "center" }} data-reveal>
+          <span className="rd-eyebrow" style={{ justifyContent: "center" }}>
+            Our Commitment
+          </span>
+          <h2 className="rd-title" style={{ marginTop: "0.9rem" }}>
+            Precision, Efficiency and Patient-Centric Care
+          </h2>
+          <p className="rd-copy" style={{ marginInline: "auto", marginTop: "1.1rem" }}>
+            {commitmentStatement}
+          </p>
         </div>
       </section>
 

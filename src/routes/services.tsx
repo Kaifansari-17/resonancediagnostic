@@ -33,6 +33,8 @@ import { Waveform } from "@/components/Waveform";
 import { ButtonLink } from "@/components/Button";
 import {
   corporateFeatures,
+  diagnosticExpertise,
+  diagnosticExpertiseIntro,
   documentationFlow,
   documentationHighlights,
   packages,
@@ -111,6 +113,30 @@ function Services() {
           <div className="rd-grid">
             {services.map((s, i) => (
               <ServiceCard key={s.id} {...s} number={`0${i + 1}`} delay={i * 70} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Diagnostic expertise / lab departments */}
+      <section className="rd-section">
+        <div className="rd-container">
+          <SectionHeading
+            eyebrow="Our Diagnostic Expertise"
+            title="A Comprehensive Spectrum of Pathology Services"
+            copy={diagnosticExpertiseIntro}
+          />
+          <div className="rd-grid">
+            {diagnosticExpertise.map((d, i) => (
+              <ServiceCard
+                key={d.title}
+                number={`0${i + 1}`}
+                title={d.title}
+                description={d.description}
+                icon={d.icon}
+                alt={i % 2 === 1}
+                delay={i * 70}
+              />
             ))}
           </div>
         </div>

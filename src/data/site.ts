@@ -70,7 +70,13 @@ export type IconName =
   | "waveform"
   | "flask"
   | "document"
-  | "shield";
+  | "shield"
+  | "clock"
+  | "truck"
+  | "wallet"
+  | "headset"
+  | "droplet"
+  | "dna";
 
 export const differentiators: { title: string; description: string; icon: IconName }[] = [
   {
@@ -148,6 +154,112 @@ export const trustStrip: { title: string; icon: IconName }[] = [
   { title: "Research Driven", icon: "flask" },
   { title: "Patient Centric", icon: "heart" },
 ];
+
+/**
+ * "Why Choose Resonance Diagnostics" — the lab's core service differentiators
+ * as provided by Kargill Healthcare (accuracy, automation, TAT, B2B support,
+ * logistics and pricing transparency).
+ */
+export const whyChooseUs: { title: string; description: string; icon: IconName }[] = [
+  {
+    title: "Accurate & Reliable Reports",
+    description:
+      "Strict quality control at every stage, modern diagnostic systems and experienced review ensure precise, consistent and dependable results.",
+    icon: "target",
+  },
+  {
+    title: "Advanced Fully Automated Equipment",
+    description:
+      "Fully automated equipment minimises manual intervention, maintaining uniform quality and faster turnaround without compromising accuracy.",
+    icon: "microchip",
+  },
+  {
+    title: "Quick Turnaround Time (TAT)",
+    description:
+      "Advanced technology and well-organised processes keep every step, from sample collection to final report, smooth and free of unnecessary delays.",
+    icon: "clock",
+  },
+  {
+    title: "Dedicated B2B Support Team",
+    description:
+      "A dedicated support team ensures smooth coordination with partner clinics, hospitals and healthcare providers, from test booking to report delivery.",
+    icon: "headset",
+  },
+  {
+    title: "Logistics & Sample Pickup Network",
+    description:
+      "Three dedicated collection rounds daily — morning, afternoon and evening — with samples carried on ice packs at safe temperatures to preserve integrity.",
+    icon: "truck",
+  },
+  {
+    title: "Transparent Pricing",
+    description:
+      "All tests and health packages are clearly priced with no hidden charges, so patients and partners always know exactly what they are paying for.",
+    icon: "wallet",
+  },
+];
+
+/**
+ * Laboratory departments behind "Our Diagnostic Expertise" — the specific
+ * pathology disciplines Resonance operates across.
+ */
+export const diagnosticExpertiseIntro =
+  "A comprehensive spectrum of pathology services built on precision, advanced technology and uncompromising quality standards — every process managed under strict quality protocols to ensure consistency, reliability and excellence.";
+
+export const diagnosticExpertise: { title: string; description: string; icon: IconName }[] = [
+  {
+    title: "Hematology",
+    description:
+      "Comprehensive evaluation of blood health to support detection and monitoring of infections, anemia and various hematological conditions with high accuracy.",
+    icon: "droplet",
+  },
+  {
+    title: "Biochemistry",
+    description:
+      "Advanced analysis of organ function and metabolic balance — liver health, kidney performance, glucose levels, lipid balance and overall physiological condition.",
+    icon: "flask",
+  },
+  {
+    title: "Immunology",
+    description:
+      "Focused on identifying infections and immune responses, enabling early detection and supporting effective clinical decisions.",
+    icon: "shield",
+  },
+  {
+    title: "Hormone & Endocrine Care",
+    description:
+      "In-depth hormone profiling to assess endocrine health, including thyroid function, vitamin levels and other key hormonal parameters.",
+    icon: "pulse",
+  },
+  {
+    title: "Clinical Pathology",
+    description:
+      "Routine evaluations such as urine and other essential analyses to support general health assessment and early identification of abnormalities.",
+    icon: "vial",
+  },
+  {
+    title: "Microbiology",
+    description:
+      "Specialised services for detecting bacterial, viral and fungal infections, ensuring accurate identification and supporting appropriate treatment planning.",
+    icon: "microscope",
+  },
+  {
+    title: "Histopathology & Cytology",
+    description:
+      "Detailed examination of cells and tissues to assist in the diagnosis and evaluation of various medical conditions, including chronic and complex diseases.",
+    icon: "dna",
+  },
+  {
+    title: "Preventive Health Solutions",
+    description:
+      "Well-designed health checkup programs focused on early detection, regular monitoring and long-term wellness for individuals and families.",
+    icon: "heart",
+  },
+];
+
+/** Closing "Commitment" statement, drawn from the lab's own service overview. */
+export const commitmentStatement =
+  "Resonance Diagnostics combines advanced automation, expert supervision and stringent quality control measures to deliver dependable and consistent outcomes. Our focus on precision, efficiency and patient-centric care ensures that every report contributes to better healthcare decisions and improved patient outcomes.";
 
 export const services: {
   id: string;

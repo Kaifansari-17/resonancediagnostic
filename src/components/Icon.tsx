@@ -1,10 +1,14 @@
 import {
   Activity,
   Building2,
+  Clock,
   Cpu,
+  Dna,
+  Droplet,
   FileCheck,
   FileText,
   FlaskConical,
+  Headset,
   Heart,
   HeartPulse,
   House,
@@ -12,8 +16,10 @@ import {
   ShieldCheck,
   Target,
   TestTube,
+  Truck,
   AudioWaveform,
   UserRoundCheck,
+  Wallet,
   type LucideIcon,
 } from "lucide-react";
 import type { IconName } from "@/data/site";
@@ -33,6 +39,12 @@ const map: Record<IconName, LucideIcon> = {
   flask: FlaskConical,
   document: FileText,
   shield: ShieldCheck,
+  clock: Clock,
+  truck: Truck,
+  wallet: Wallet,
+  headset: Headset,
+  droplet: Droplet,
+  dna: Dna,
 };
 
 export function BrandIcon({ name, size = 24 }: { name: IconName; size?: number }) {
