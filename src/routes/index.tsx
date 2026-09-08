@@ -13,6 +13,7 @@ import {
   UserRoundCheck,
   Workflow,
 } from "lucide-react";
+import technologyMachineImage from "@/assets/Machines/DSC08554.jpg";
 import { Hero } from "@/components/Hero";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -21,7 +22,6 @@ import { DiagnosticJourney } from "@/components/DiagnosticJourney";
 import { PackageCard } from "@/components/PackageCard";
 import { TrustStrip } from "@/components/TrustStrip";
 import { SectionSeam } from "@/components/SectionSeam";
-import { ServiceExplorer } from "@/components/ServiceExplorer";
 import { Waveform } from "@/components/Waveform";
 import { ButtonLink } from "@/components/Button";
 import {
@@ -47,7 +47,7 @@ const howItWorksIcons = [CalendarCheck, HomeIcon, Workflow, FileCheck, UserRound
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Resonance Diagnostic | Advanced Diagnostics & Scientific Healthcare" },
+      { title: "Resonance Diagnostic by Kargill Healthcare" },
       {
         name: "description",
         content:
@@ -185,16 +185,41 @@ function Home() {
         </div>
       </section>
 
-      {/* Test / service explorer */}
+      {/* Comprehensive testing overview */}
       <section className="rd-section is-ice">
-        <div className="rd-container">
-          <SectionHeading
-            center
-            eyebrow="Find What You Need"
-            title="Find the Right Diagnostic Service"
-            copy="Search by name, or filter by health concern."
-          />
-          <ServiceExplorer />
+        <div className="rd-container" style={{ maxWidth: 760, textAlign: "center" }} data-reveal>
+          <span className="rd-eyebrow" style={{ justifyContent: "center" }}>
+            Comprehensive Testing
+          </span>
+          <h2 className="rd-title" style={{ marginTop: "0.9rem" }}>
+            100+ Diagnostic Tests, One Trusted Lab
+          </h2>
+          <p className="rd-copy" style={{ marginInline: "auto", marginTop: "1.1rem" }}>
+            Beyond the pathology disciplines above, Resonance Diagnostic supports 100+ routine,
+            specialised and preventive diagnostic tests — backed by modern technology, structured
+            processes and quality-focused workflows.
+          </p>
+        </div>
+        <div
+          className="rd-container rd-research-cta"
+          style={{ marginTop: "3rem", ["--reveal-delay" as string]: "80ms" }}
+          data-reveal
+        >
+          <div>
+            <h2 className="rd-title">Looking for a Specific Test?</h2>
+            <p className="rd-copy">
+              Explore our diagnostic services or contact our team to confirm test availability and
+              requirements.
+            </p>
+          </div>
+          <div className="rd-actions">
+            <ButtonLink to="/contact" hash="booking">
+              Book a Test <ArrowRight size={17} />
+            </ButtonLink>
+            <ButtonLink to="/contact" variant="ghost">
+              Contact Us
+            </ButtonLink>
+          </div>
         </div>
       </section>
 
@@ -207,18 +232,13 @@ function Home() {
             copy="Thoughtfully structured screening options for proactive health assessment."
           />
           <div className="rd-grid">
-            {packages.slice(0, 4).map((p, i) => (
+            {packages.map((p, i) => (
               <PackageCard key={p.title} {...p} delay={i * 70} />
             ))}
           </div>
           <p className="rd-note" style={{ marginTop: "1.4rem" }}>
             {packagesNote}
           </p>
-          <div className="rd-actions" style={{ marginTop: "1rem" }}>
-            <ButtonLink to="/services" hash="package-list">
-              View all packages <ArrowRight size={17} />
-            </ButtonLink>
-          </div>
         </div>
       </section>
 
@@ -284,7 +304,12 @@ function Home() {
       <section className="rd-section is-ice">
         <div className="rd-container rd-split">
           <div className="rd-tech-visual" data-reveal>
-            <Waveform animated />
+            <img
+              src={technologyMachineImage}
+              alt="Laboratory technician working with diagnostic equipment"
+              width={600}
+              height={400}
+            />
           </div>
           <div data-reveal style={{ ["--reveal-delay" as string]: "80ms" }}>
             <SectionHeading eyebrow="Technology" title="Science Meets Technology" />

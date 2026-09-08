@@ -5,12 +5,13 @@ type Props = {
   tag: string;
   title: string;
   description: string;
-  tests: string;
+  price: string;
+  tests: string[];
   audience: string;
   delay?: number;
 };
 
-export function PackageCard({ tag, title, description, tests, audience, delay = 0 }: Props) {
+export function PackageCard({ tag, title, description, price, tests, audience, delay = 0 }: Props) {
   return (
     <article
       className="rd-card rd-package"
@@ -21,10 +22,16 @@ export function PackageCard({ tag, title, description, tests, audience, delay = 
       <h3>{title}</h3>
       <p>{description}</p>
 
+      <ul className="rd-package-tests">
+        {tests.map((t) => (
+          <li key={t}>{t}</li>
+        ))}
+      </ul>
+
       <div className="rd-package-foot">
         <div>
-          <small>Starting</small>
-          <span className="rd-price">[PRICE]</span>
+          <small>Price</small>
+          <span className="rd-price">{price}</span>
         </div>
         <Link to="/contact" hash="booking" className="rd-btn rd-btn-primary rd-btn-sm">
           Book Now
@@ -33,7 +40,7 @@ export function PackageCard({ tag, title, description, tests, audience, delay = 
 
       <div className="rd-package-meta">
         <span>
-          <TestTube size={14} aria-hidden="true" /> {tests}
+          <TestTube size={14} aria-hidden="true" /> {tests.length} tests
         </span>
         <span>
           <Users size={14} aria-hidden="true" /> {audience}

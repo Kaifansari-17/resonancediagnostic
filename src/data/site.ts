@@ -15,15 +15,18 @@ export const brand = {
 
 /**
  * Structured company facts for the About page. Only verified fields are
- * populated — `established` stays null until an actual date is confirmed,
- * and `relationship` uses the exact phrasing already used elsewhere on the
- * site ("operated by"), not an assumed parent-company relationship.
+ * populated — `established` stays null until an actual date is confirmed.
+ * `relationship` reflects the confirmed parent-company relationship: Kargill
+ * Healthcare LLP advances diagnostic healthcare through research, clinical
+ * validation and regulatory (IVDR) expertise, and Resonance is its
+ * diagnostic-facing brand.
  */
 export const companyInfo = {
   name: "Resonance Diagnostic",
   legal: "Kargill Healthcare LLP",
   established: null as string | null,
-  relationship: "Resonance Diagnostic is operated by Kargill Healthcare LLP.",
+  relationship:
+    "Resonance Diagnostic is operated by Kargill Healthcare LLP, the parent company behind Resonance, which advances diagnostic healthcare through research, clinical validation and regulatory expertise.",
   description:
     "Resonance Diagnostic brings together diagnostic healthcare services and a broader scientific approach — research, documentation and validation — operated by Kargill Healthcare LLP.",
 };
@@ -316,88 +319,58 @@ export const services: {
   },
 ];
 
-export const packages = [
+export const packages: {
+  tag: string;
+  title: string;
+  description: string;
+  price: string;
+  audience: string;
+  tests: string[];
+}[] = [
   {
-    tag: "General Health",
-    title: "Complete Wellness Check",
-    description: "A broad preventive screening package for routine adult health monitoring.",
-    tests: "35+ tests",
+    tag: "Comprehensive",
+    title: "Full Body Profile",
+    description:
+      "A comprehensive preventive screening package covering blood health, blood sugar, lipid, organ function and key vitamin levels.",
+    price: "₹3,500",
     audience: "Adults",
+    tests: [
+      "Complete Blood Count (CBC)",
+      "Erythrocyte Sedimentation Rate (ESR)",
+      "Fasting Blood Sugar (FBS)",
+      "Post Prandial Blood Sugar (PPBS)",
+      "Glycated Hemoglobin (HbA1c)",
+      "Lipid Profile",
+      "Kidney Function Test (KFT)",
+      "Liver Function Test (LFT)",
+      "Serum Iron",
+      "Thyroid Function Test (TFT)",
+      "Vitamin D (25-Hydroxy)",
+      "Vitamin B12",
+      "Urine Routine Examination",
+    ],
   },
   {
-    tag: "Diabetes",
-    title: "Diabetes Care Profile",
-    description: "A focused package for glucose and diabetes-related monitoring.",
-    tests: "12+ tests",
+    tag: "Essential",
+    title: "Mini Health Profile",
+    description:
+      "An essential preventive screening package covering blood health, blood sugar, lipid and key organ function tests.",
+    price: "₹1,600",
     audience: "Adults",
-  },
-  {
-    tag: "Thyroid",
-    title: "Thyroid Wellness Profile",
-    description: "A focused thyroid screening package.",
-    tests: "5+ tests",
-    audience: "Adults",
-  },
-  {
-    tag: "Liver",
-    title: "Liver Health Profile",
-    description: "A liver-focused investigation package.",
-    tests: "10+ tests",
-    audience: "Adults",
-  },
-  {
-    tag: "Kidney",
-    title: "Kidney Health Profile",
-    description: "A kidney-focused investigation package.",
-    tests: "9+ tests",
-    audience: "Adults",
-  },
-  {
-    tag: "Cardiac",
-    title: "Cardiac Risk Screen",
-    description: "A preventive cardiovascular screening package.",
-    tests: "15+ tests",
-    audience: "Adults",
-  },
-  {
-    tag: "Vitamins",
-    title: "Vitamin Essentials",
-    description: "A vitamin and nutritional screening package.",
-    tests: "8+ tests",
-    audience: "Adults",
-  },
-  {
-    tag: "Women’s Health",
-    title: "Women’s Preventive Profile",
-    description: "A preventive package for women’s health screening.",
-    tests: "20+ tests",
-    audience: "Women",
-  },
-  {
-    tag: "Men’s Health",
-    title: "Men’s Preventive Profile",
-    description: "A preventive package for men’s health screening.",
-    tests: "18+ tests",
-    audience: "Men",
-  },
-  {
-    tag: "Senior Citizen",
-    title: "Senior Wellness Screen",
-    description: "A comprehensive preventive screening package for senior citizens.",
-    tests: "30+ tests",
-    audience: "Seniors",
-  },
-  {
-    tag: "Preventive Health",
-    title: "Preventive Health Plus",
-    description: "A broader annual preventive screening package.",
-    tests: "40+ tests",
-    audience: "Adults",
+    tests: [
+      "Complete Blood Count (CBC) — All Parameters",
+      "Glycated Hemoglobin (HbA1c) with Graph",
+      "Lipid Profile",
+      "Liver Function Test (LFT)",
+      "Renal Function Test (RFT)",
+      "Fasting Blood Sugar (FBS)",
+      "Thyroid Function Test (TFT)",
+    ],
   },
 ];
 
 export const packagesNote =
-  "Package inclusions and test counts are indicative and may be customised. Contact our team to confirm the latest details and pricing for your requirements.";
+  "Prices are per package and subject to periodic revision. Contact our team to confirm current availability before booking.";
 
 /**
  * The Resonance signature narrative: Research → Documentation → Validation →
@@ -522,7 +495,7 @@ export const aboutFaqs = [
   },
   {
     q: "What is the relationship between Resonance Diagnostic and Kargill Healthcare LLP?",
-    a: "Resonance Diagnostic is operated by Kargill Healthcare LLP.",
+    a: "Kargill Healthcare LLP is the parent company behind Resonance, advancing diagnostic healthcare through research, clinical validation and regulatory (IVDR) expertise for diagnostic and point-of-care products.",
   },
   {
     q: "What services does Resonance provide?",

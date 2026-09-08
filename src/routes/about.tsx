@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import whoWeAreImage from "@/assets/Machines/DSC08523.jpg";
 import {
   ArrowRight,
   CheckCircle2,
@@ -34,10 +35,19 @@ import {
 const qualityIcons = [ClipboardList, FileText, ShieldCheck, Target];
 const principles = differentiators.slice(0, 4);
 
+const machineImageModules = import.meta.glob<string>("../assets/Machines/*.jpg", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+const machineImages = Object.keys(machineImageModules)
+  .sort()
+  .map((key) => machineImageModules[key]);
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Resonance Diagnostic | Kargill Healthcare LLP" },
+      { title: "Resonance Diagnostic by Kargill Healthcare" },
       {
         name: "description",
         content:
@@ -90,13 +100,7 @@ function About() {
               </ul>
             </div>
           </div>
-          <div
-            className="rd-tech-visual"
-            style={{ marginTop: "3rem", aspectRatio: "16 / 4" }}
-            data-reveal
-          >
-            <Waveform animated />
-          </div>
+        
         </div>
       </section>
 
@@ -131,7 +135,21 @@ function About() {
             >
               <span className="rd-tag">Operating organisation</span>
               <h3>Kargill Healthcare LLP</h3>
-              <p>The organisation through which Resonance Diagnostic operates.</p>
+              <p>
+                The parent company behind Resonance, advancing diagnostic healthcare through
+                research, clinical validation and regulatory expertise.
+              </p>
+              <p
+                style={{
+                  marginTop: "0.6rem",
+                  fontSize: "0.78rem",
+                  color: "var(--rd-muted)",
+                  letterSpacing: "0.01em",
+                }}
+              >
+                POCT · Biomarker Research · Clinical Validation · IVD · LFIA Technology · IVDR
+                Regulatory Consultancy
+              </p>
             </div>
           </div>
         </div>
@@ -270,17 +288,27 @@ function About() {
         </div>
       </section>
 
-      {/* Infrastructure — abstract scientific visual, not stock facility photos */}
+      {/* Infrastructure — machine gallery */}
       <section className="rd-section">
         <div className="rd-container">
           <SectionHeading
             center
             eyebrow="Infrastructure"
             title="A Scientific Environment"
-            copy="Detailed facility information will be published here as it becomes available."
+            copy="A look at the equipment and machines that power our diagnostic and research work."
           />
-          <div className="rd-tech-visual" style={{ aspectRatio: "21 / 6" }} data-reveal>
-            <Waveform animated />
+          <div className="rd-machine-marquee" data-reveal>
+            <div className="rd-machine-track">
+              {[...machineImages, ...machineImages].map((src, i) => (
+                <div className="rd-machine-card" key={`${src}-${i}`}>
+                  <img
+                    src={src}
+                    alt={`Resonance Diagnostic machine ${(i % machineImages.length) + 1}`}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

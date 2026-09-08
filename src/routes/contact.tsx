@@ -7,6 +7,7 @@ import { ScienceHero } from "@/components/ScienceHero";
 import { SectionSeam } from "@/components/SectionSeam";
 import { QuickActions } from "@/components/QuickActions";
 import { BookingForm } from "@/components/BookingForm";
+import technologyMachineImage from "@/assets/Machines/DSC08533.jpg";
 import { EnquirySelector } from "@/components/EnquirySelector";
 import { DiagnosticJourney } from "@/components/DiagnosticJourney";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -21,7 +22,7 @@ const homeCollectionSteps = howItWorks.slice(0, 4);
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Book a Test | Resonance Diagnostic" },
+      { title: "Resonance Diagnostic by Kargill Healthcare" },
       {
         name: "description",
         content:
@@ -69,7 +70,10 @@ function Contact() {
               copy="Tell us what you need and our team can assist you with the next step."
             />
             <div className="rd-tech-visual" style={{ marginTop: "2rem", aspectRatio: "4 / 3" }}>
-              <Waveform animated />
+              <img
+                src={technologyMachineImage}
+                alt="Laboratory technician working with diagnostic equipment"
+              />
             </div>
           </div>
           <div data-reveal style={{ ["--reveal-delay" as string]: "80ms" }}>

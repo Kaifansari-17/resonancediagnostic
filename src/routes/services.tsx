@@ -56,7 +56,7 @@ const qualityIcons = [ClipboardList, FileText, ShieldCheck, Target];
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Diagnostic & Scientific Services | Resonance Diagnostic" },
+      { title: "Resonance Diagnostic by Kargill Healthcare" },
       {
         name: "description",
         content:
@@ -192,7 +192,7 @@ function Services() {
             center
             eyebrow="Research"
             title="Research & Scientific Support"
-            copy="Structured research capabilities supporting scientific investigation, evidence generation and healthcare-focused studies."
+            copy="Structured research capabilities supporting scientific investigation, evidence generation and healthcare-focused studies — drawing on Kargill Healthcare LLP's expertise in POCT, biomarker research and LFIA technology."
           />
           <div className="rd-grid">
             {researchHighlights.map((r, i) => (
@@ -225,7 +225,7 @@ function Services() {
           <SectionHeading
             eyebrow="Documentation"
             title="Documentation & Scientific Records"
-            copy="Structured documentation helps transform research, technical processes and quality activities into clear, traceable records."
+            copy="Structured documentation helps transform research, technical processes and quality activities into clear, traceable records — including IVDR regulatory documentation supported by Kargill Healthcare LLP."
           />
           <div className="rd-grid">
             {documentationHighlights.map((d, i) => (
@@ -251,7 +251,7 @@ function Services() {
           <SectionHeading
             eyebrow="Validation"
             title="Validation & Verification"
-            copy="Structured validation activities designed to evaluate whether defined methods, processes or systems meet their intended requirements."
+            copy="Structured validation activities designed to evaluate whether defined methods, processes or systems meet their intended requirements — backed by Kargill Healthcare LLP's clinical evaluation expertise."
           />
           <p className="rd-note" style={{ maxWidth: "62ch" }}>
             Specific validation categories can be confirmed based on your requirements — contact our
